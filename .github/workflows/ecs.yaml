@@ -50,7 +50,7 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: ../.aws/task-definition.json
+          task-definition: task-definition.json
           container-name: bernatei-website
           image: ${{ steps.build-image.outputs.image }}
 
@@ -58,6 +58,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: ecs-fargate-cluster
-          cluster: ecs-svc-test
+          service: ecs-svc-test
+          cluster: ecs-fargate-cluster
           wait-for-service-stability: true
