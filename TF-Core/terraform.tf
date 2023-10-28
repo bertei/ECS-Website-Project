@@ -41,16 +41,6 @@ module "network-services" {
   security_groups = {
     ecs-lb-sg = {
       description = "ECS Loadbalancer security group"
-      #I leave this map for testing purposes. I failed to create multiple sg's with dynamic rules.
-      #sg_ingress = {
-      #  rule-1 = {
-      #    description = "Allow HTTP requests"
-      #    from_port   = 80
-      #    to_port     = 80
-      #    protocol    = "TCP"
-      #    cidr_blocks = ["0.0.0.0/0"]
-      #  }
-      #}
     }
   }
   sg_ingress = {
