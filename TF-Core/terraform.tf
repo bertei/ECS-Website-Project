@@ -22,7 +22,7 @@ provider "aws" {
 module "network-services" {
   source = "../TF-Modules//vpc"
 
-  #VPC Params definition
+  #VPC Parameters definition
   vpc_cidr_block = "10.0.0.0/24"
 
   #Subnet Params definition
