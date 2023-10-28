@@ -70,12 +70,12 @@ module "network-services" {
   }
 }
 
-#module "ecr" {
-#  source = "../TF-Modules//ecr"
-#
-#  ecr_repo_name = "ecs-website-images"
-#  mutability    = true 
-#}
+module "ecr" {
+  source = "../TF-Modules//ecr"
+
+  ecr_repo_name = "ecs-website-images"
+  mutability    = true 
+}
 #
 #module "ecs" {
 #  source = "../TF-Modules//ecs"
