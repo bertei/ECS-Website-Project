@@ -1,6 +1,6 @@
-output "ecr_repo_url" {
-  value = module.ecr.ecr_repo_url
-}
+#output "ecr_repo_url" {
+#  value = module.ecr.ecr_repo_url
+#}
 
 output "subnet_ids" {
   value = module.network-services.subnet_id
