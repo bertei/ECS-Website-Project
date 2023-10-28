@@ -76,21 +76,21 @@ module "ecr" {
   ecr_repo_name = "ecs-website-images"
   mutability    = true 
 }
-#
-#module "ecs" {
-#  source = "../TF-Modules//ecs"
-#
-#  ##ECS Cluster params. definition
-#  ecs_cluster_name = "ecs-fargate-cluster"
-#
-#  ##ECS Task params. definition
-#  task_name       = "ecs-fargate-task"
-#  image           = module.ecr.ecr_repo_url
-#  container_name  = "bernatei-website"
-#
-#  ##ECS Service definition params.
-#  service_name      = "ecs-fargate-service"
-#  subnet_id         = module.network-services.subnet_id
-#  security_group_id = module.network-services.sg_id
-#  tg_arn            = module.network-services.alb_tg_arn
-#}
+
+module "ecs" {
+  source = "../TF-Modules//ecs"
+
+  ##ECS Cluster params. definition
+  ecs_cluster_name = "ecs-fargate-cluster"
+
+  ##ECS Task params. definition
+  task_name       = "ecs-fargate-task"
+  image           = module.ecr.ecr_repo_url
+  container_name  = "bernatei-website"
+
+  ##ECS Service definition params.
+  service_name      = "ecs-fargate-service"
+  subnet_id         = module.network-services.subnet_id
+  security_group_id = module.network-services.sg_id
+  tg_arn            = module.network-services.alb_tg_arn
+}
