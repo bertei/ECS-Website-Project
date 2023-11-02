@@ -39,24 +39,5 @@ variable "sg_egress" {
 variable "cert_arn" {
   description = "Hardcoded acm cert arn"
   type = string
-  default = "arn:aws:acm:us-east-1:378842471989:certificate/58887715-d99d-4773-aef4-a64e502686cd"
+  default = ""
 }
-
-## Loadbalancer variables
-#variable "lb_name" {
-#  description = "LB name"
-#  type = string
-#  default = null
-#}
-
-#variable "alb_listeners" {
-#  description = "Map containing ALB listeners"
-#  type = any
-#  default = {}
-#}
-#
-#variable "default_actions" {
-#  description = "Map containing default_actions"
-#  type = any
-#  default = {}
-#}
