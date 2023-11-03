@@ -8,6 +8,9 @@ on:
 jobs:
   increment-counter:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .github/workflows
 
     steps:
       - name: Get global counter
