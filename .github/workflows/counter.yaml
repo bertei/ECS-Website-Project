@@ -1,0 +1,23 @@
+name: Increment global counter
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  increment-counter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get global counter
+        run: cat counter.json | jq .counter
+
+      - name: Increment global counter
+        run: |
+          counter=$(jq .counter counter.json)
+          counter=$((counter + 1))
+          echo $counter > counter.json
+
+      - name: Set output for global counter
+        run: echo "counter=$counter" >> $GITHUB_OUTPUT
