@@ -9,6 +9,9 @@ jobs:
   increment-counter:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout (copy repo to runner)
+        uses: actions/checkout@v3
+        
       - name: Get global counter
         run: |
           ls -l 
